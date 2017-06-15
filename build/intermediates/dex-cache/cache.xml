@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/absolutelysaurabh/Desktop/MyQ-rishabh/library/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="59c346c6421deef63620c2a043b5aa3123bf6408">
+        <dex dex="/home/absolutelysaurabh/Desktop/MyQ-rishabh/app/build/intermediates/pre-dexed/debug/classes_da5cf8e448aeddba4eb640d85643565cbab71a51.jar" />
+    </item>
+
+</items>
