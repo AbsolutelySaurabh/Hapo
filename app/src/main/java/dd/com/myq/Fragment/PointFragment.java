@@ -30,14 +30,13 @@ import java.util.HashMap;
 import cz.msebera.android.httpclient.Header;
 import dd.com.myq.R;
 import dd.com.myq.Util.SessionManager;
-
 public class PointFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
 
-    SwipeRefreshLayout mSwipeRefreshLayout;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
 
     private TextView points;
 
@@ -45,7 +44,7 @@ public class PointFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     public static int Correct ;
     public static int Total_points ;
 
-
+    View view;
 
 
     String POINTS_REQUEST_URL="http://myish.com:10010/api/users/";
@@ -58,7 +57,7 @@ public class PointFragment extends Fragment implements SwipeRefreshLayout.OnRefr
         // Required empty public constructor
     }
 
-   // String score;
+    // String score;
 
     public static PointFragment newInstance(String param1, String param2) {
         PointFragment fragment = new PointFragment();
@@ -82,7 +81,7 @@ public class PointFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_point, container, false);
+        view = inflater.inflate(R.layout.fragment_point, container, false);
 
         SessionManager currentSession = new SessionManager(getActivity());
         HashMap<String, String> user_details = currentSession.getUserDetails();
@@ -96,6 +95,7 @@ public class PointFragment extends Fragment implements SwipeRefreshLayout.OnRefr
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeToRefresh);
         mSwipeRefreshLayout.setColorSchemeResources(R.color.orange, R.color.blue, R.color.green);
+
 
         Calendar c = Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
@@ -236,9 +236,9 @@ public class PointFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     @Override
     public void onRefresh() {
 
-        getPoints(getView());
-    }
+        getPoints(view);
 
+    }
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated

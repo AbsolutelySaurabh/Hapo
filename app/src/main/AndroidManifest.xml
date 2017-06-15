@@ -71,6 +71,9 @@
             android:screenOrientation="portrait"
             android:theme="@style/WithActionBar" />
         <activity android:name=".Activity.TermsService"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="150893d0b9ebaa080e1fae4fcda793a8ea256db5" />
     </application>
 
 </manifest>

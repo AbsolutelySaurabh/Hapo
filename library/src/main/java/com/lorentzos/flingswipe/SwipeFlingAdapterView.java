@@ -136,7 +136,6 @@ public class SwipeFlingAdapterView extends BaseFlingAdapterView {
         }
     }
 
-
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void makeAndAddView(View child) {
 
@@ -156,7 +155,6 @@ public class SwipeFlingAdapterView extends BaseFlingAdapterView {
             cleanupLayoutState(child);
         }
 
-
         int w = child.getMeasuredWidth();
         int h = child.getMeasuredHeight();
 
@@ -164,7 +162,6 @@ public class SwipeFlingAdapterView extends BaseFlingAdapterView {
         if (gravity == -1) {
             gravity = Gravity.TOP | Gravity.START;
         }
-
 
         int layoutDirection = getLayoutDirection();
         final int absoluteGravity = Gravity.getAbsoluteGravity(gravity, layoutDirection);

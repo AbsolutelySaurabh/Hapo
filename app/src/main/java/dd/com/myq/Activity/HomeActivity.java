@@ -11,6 +11,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Tracker;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -35,6 +37,9 @@ public class HomeActivity extends AppCompatActivity implements AccountFragment.O
     private ImageLoader imageLoader;
     private DisplayImageOptions options;
 
+    private static GoogleAnalytics sAnalytics;
+    private static Tracker mTracker;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +47,10 @@ public class HomeActivity extends AppCompatActivity implements AccountFragment.O
 
         sessionManager = new SessionManager(this);
         sessionManager.checkLogin();
+
+        // Obtain the shared Tracker instance.
+//        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+//        mTracker = application.getDefaultTracker();
 
         HashMap<String, String> user = sessionManager.getUserDetails();
 
