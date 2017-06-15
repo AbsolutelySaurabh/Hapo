@@ -26,7 +26,6 @@ import com.facebook.login.widget.LoginButton;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-import com.nostra13.universalimageloader.utils.L;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,7 +48,6 @@ import cz.msebera.android.httpclient.entity.StringEntity;
 import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
 import cz.msebera.android.httpclient.message.BasicNameValuePair;
 import cz.msebera.android.httpclient.util.EntityUtils;
-import cz.msebera.android.httpclient.util.TextUtils;
 import dd.com.myq.App.Config;
 import dd.com.myq.R;
 import dd.com.myq.Util.ConnectionDetector;
@@ -204,6 +202,17 @@ LoginActivity extends AppCompatActivity {
                         Email.setError("Please enter a valid email!");
                     }
                 }
+            }
+        });
+
+        TextView bottom_text = (TextView) findViewById(R.id.bottom_text);
+        bottom_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), TermsService.class);
+                startActivity(intent);
+
             }
         });
 

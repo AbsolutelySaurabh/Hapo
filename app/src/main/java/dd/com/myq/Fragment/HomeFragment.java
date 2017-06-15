@@ -256,8 +256,6 @@ public class HomeFragment extends Fragment{
                 button_right.setBackgroundResource(R.drawable.true_btn);
                 button_right.setEnabled(false);
 
-                flingContainer.setEnabled(false);
-
                 if(flag==10)
                 {
                     CallAPI call = new CallAPI();
@@ -612,9 +610,6 @@ public class HomeFragment extends Fragment{
             Button button_right = (Button) view.findViewById(R.id.right);
             button_right.setBackgroundResource(R.drawable.true_btn);
             button_right.setEnabled(true);
-
-            flingContainer.setEnabled(true);
-
 
             arrayAdapter.notifyDataSetChanged();
         }
